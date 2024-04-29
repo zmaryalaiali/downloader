@@ -1,0 +1,57 @@
+plugins {
+    alias(libs.plugins.androidApplication)
+}
+
+android {
+    namespace 'com.luilala.kandrhar.downloader'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.luilala.kandrhar.downloader"
+        minSdk 19
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildToolsVersion '34.0.0'
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+    implementation 'com.github.HaarigerHarald:android-youtubeExtractor:v2.1.0'
+    // google play service
+    implementation 'com.google.api-client:google-api-client:1.31.5'
+    implementation 'com.google.http-client:google-http-client-jackson2:1.39.2'
+    implementation 'com.google.apis:google-api-services-youtube:v3-rev20240417-2.0.0'
+
+    // for GSON
+    implementation 'com.squareup.retrofit2:converter-gson:2.11.0'
+    // for retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.11.0'
+
+
+}
