@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getInfo(String id) {
-        String url = "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=" + id + "&key=AIzaSyAdQ0trXZw9je8oQjRh7NHm5jrdItlOe54";
+        String url = "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=" + id + "&key=fghjkl;lkjhgtr";
         GetVidoe vidoe = retrofit.create(GetVidoe.class);
         Call<VideoModel> call = vidoe.getVideoInfo(url);
         call.enqueue(new Callback<VideoModel>() {
