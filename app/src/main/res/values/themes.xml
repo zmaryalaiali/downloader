@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.Downloader" parent="Base.Theme.Downloader" />
+    <style name="bottomStyleTheme" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="background">@color/white</item>
+    </style>
 </resources>

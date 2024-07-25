@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_margin="6dp"
+         android:background="@drawable/videodownloading_design">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/iv_download_video_image"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:scaleType="centerCrop"
+                android:layout_margin="4dp"
+                android:src="@drawable/home" />
+
+            <TextView
+                android:id="@+id/tv_downlaod_video_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/black"
+                android:layout_toEndOf="@id/iv_download_video_image"
+                android:text="the Video Title" />
+
+            <ProgressBar
+                android:id="@+id/progressBar_download_video_progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="260dp"
+                android:layout_below="@id/tv_downlaod_video_title"
+                android:layout_toEndOf="@id/iv_download_video_image"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="12dp"
+                android:layout_height="3dp" />
+
+            <TextView
+                android:id="@+id/tv_downlaod_video_status"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/progressBar_download_video_progressBar"
+                android:layout_toEndOf="@id/iv_download_video_image"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="6dp"
+                android:text="downloading..." />
+            <TextView
+                android:id="@+id/tv_downlaod_video_persentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/progressBar_download_video_progressBar"
+                android:layout_toEndOf="@id/tv_downlaod_video_status"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="6dp"
+                android:text="66.50 %" />
+
+            <ImageView
+                android:id="@+id/iv_download_video_downlaod_icon"
+                android:layout_width="32dp"
+                android:layout_height="32sp"
+                android:layout_marginLeft="6dp"
+                android:layout_below="@id/tv_downlaod_video_title"
+                android:src="@drawable/downlaod"
+                android:layout_toEndOf="@id/progressBar_download_video_progressBar"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
