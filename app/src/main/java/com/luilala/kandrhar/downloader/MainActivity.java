@@ -5,6 +5,7 @@ import android.app.DownloadManager;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.MenuItem;
@@ -12,12 +13,12 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.OptIn;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bottomNavigationView = findViewById(R.id.bottom_home);
-        toolbar = findViewById(R.id.toolbar_home);
-
-        // settoolbar
-        setSupportActionBar(toolbar);
+//        toolbar = findViewById(R.id.toolbar_home);
+//
+        // setToolbar
+//        setSupportActionBar(toolbar);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
@@ -77,9 +78,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 Fragment fragment = null;
-                if (menuItem.getItemId() == R.id.menu_bottom_youtube) {
-                    fragment = new YoutubFragment();
-                } else if (menuItem.getItemId() == R.id.menu_bottom_home) {
+               if (menuItem.getItemId() == R.id.menu_bottom_home) {
                     fragment = new HomeFragment();
                 } else if (menuItem.getItemId() == R.id.menu_bottom_download) {
                     fragment = new FileFragment();
@@ -131,9 +130,4 @@ public class MainActivity extends AppCompatActivity {
         pressTime = System.currentTimeMillis();
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-    }
 }

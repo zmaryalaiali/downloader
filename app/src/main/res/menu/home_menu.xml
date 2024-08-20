@@ -11,9 +11,5 @@
         android:icon="@drawable/download"
         android:title="Files" />
 
-    <item
-        android:id="@+id/menu_bottom_youtube"
-        android:icon="@drawable/youtube"
-        android:title="Youtube" />
 
 </menu>

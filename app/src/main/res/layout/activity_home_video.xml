@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeVideoActivity">
+
+    <com.google.android.exoplayer2.ui.StyledPlayerView
+        android:id="@+id/homeActivity_videoView"
+        android:layout_width="match_parent"
+        android:layout_height="250dp" />
+
+    <ProgressBar
+        android:id="@+id/homeActivity_progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"/>
+
+    <TextView
+        android:id="@+id/homeActivity_videoTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/homeActivity_videoView"
+        android:maxLines="2"
+        android:text="new York jazz lounge with relaxing jazz Bar classics "
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/homeActivity_rvVideos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/homeActivity_videoTitle"
+        tools:listitem="@layout/recycler_view_item_home"/>
+
+</RelativeLayout>

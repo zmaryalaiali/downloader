@@ -1,36 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".HomeFragment">
-
-    <com.google.android.material.textfield.TextInputLayout
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/home_search"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_margin="8dp"
+        app:iconifiedByDefault="false"
+        app:defaultQueryHint="Search or Enter Url"
+        android:background="@color/gray"
+        android:imeOptions="actionSearch"
+        android:visibility="gone"
+        />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/et_video_url"
-        android:layout_centerInParent="true"
+        app:cardCornerRadius="15dp"
         android:layout_margin="10dp"
-        android:padding="10dp">
-        <com.google.android.material.textfield.TextInputEditText
+        android:visibility="gone"
+        >
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Enter the Video URL"
-            android:inputType="textUri"
-            android:textAlignment="textStart"
-            android:drawableRight="@drawable/download"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-    <!---->
-    <Button
-        android:id="@+id/btn_download"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/et_video_url"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Download"
-        android:backgroundTint="@color/yellow"
-        android:textSize="25sp"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save Videos and Audios from Youtube "
+                android:layout_gravity="center"
+                android:textSize="18sp"
+                />
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/youtube"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-</RelativeLayout>
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_below="@id/home_search">
+        <include layout="@layout/shimmer_layout"/>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_rvVideos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/home_search"
+        tools:listitem="@layout/recycler_view_item_home"/>
+
+</LinearLayout>

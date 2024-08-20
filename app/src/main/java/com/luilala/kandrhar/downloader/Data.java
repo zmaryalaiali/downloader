@@ -2,7 +2,6 @@ package com.luilala.kandrhar.downloader;
 
 import android.content.Context;
 import android.net.Uri;
-import android.os.Environment;
 
 import androidx.annotation.NonNull;
 
@@ -18,6 +17,7 @@ import java.util.List;
 public final class Data {
 
     public static  DownloadModel[] sampleUrls = new DownloadModel[]{};
+    public static  DownloadModel[] sampleAudioUrls = new DownloadModel[]{};
 
     private Data() {
 
@@ -27,7 +27,7 @@ public final class Data {
     private static List<Request> getFetchRequests(Context context) {
         final List<Request> requests = new ArrayList<>();
         for (DownloadModel sampleUrl : sampleUrls) {
-            final Request request = new Request(sampleUrl.url, getFilePath(sampleUrl.url,sampleUrl.videoTitle, context));
+            final Request request = new Request(sampleUrl.url, getFilePath(sampleUrl.type,sampleUrl.videoTitle, context));
             requests.add(request);
         }
         return requests;
@@ -43,10 +43,12 @@ public final class Data {
     }
 
     @NonNull
-    private static String getFilePath(@NonNull final String url, String fileName,Context context) {
-//        final Uri uri = Uri.parse(url);
-        final String dir = getSaveDir(context);
-        return (dir + "/" + fileName);
+    public static String getFilePath(@NonNull final String type, String fileName,Context context) {
+
+            final String dir = getSaveDir(context);
+            return (dir + "/" + fileName);
+
+
     }
 
     @NonNull
@@ -70,6 +72,14 @@ public final class Data {
     @NonNull
     public static String getSaveDir(Context context) {
         return Folder.getFile(context).getPath();
+    }
+
+    @NonNull
+    public static String getSaveVideoDir(Context context) {
+        return Folder.getVideoFIle(context).getPath();
+    }
+    public static String getSaveAudioDir(Context context) {
+        return Folder.getAudioFile(context).getPath();
     }
 
 }

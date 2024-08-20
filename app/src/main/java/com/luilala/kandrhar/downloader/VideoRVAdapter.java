@@ -58,6 +58,13 @@ public class VideoRVAdapter extends RecyclerView.Adapter<VideoRVAdapter.ViewHold
         File file = new File(videoRVModel.getPath());
         String mb = converter(file.length());
         holder.tvLength.setText(mb);
+
+        holder.ivShareBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                shareVideo(file);
+            }
+        });
         holder.ivThreeDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,7 +123,7 @@ public class VideoRVAdapter extends RecyclerView.Adapter<VideoRVAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView thumbnail, ivThreeDate;
+        private ImageView thumbnail, ivThreeDate,ivShareBtn;
         private TextView tvTitle, tvLength;
 
         public ViewHolder(@NonNull View itemView) {
@@ -125,6 +132,7 @@ public class VideoRVAdapter extends RecyclerView.Adapter<VideoRVAdapter.ViewHold
             tvTitle = itemView.findViewById(R.id.tv_videoName);
             tvLength = itemView.findViewById(R.id.tv_videoLenght);
             ivThreeDate = itemView.findViewById(R.id.iv_threeDate);
+            ivShareBtn = itemView.findViewById(R.id.iv_shareButton);
 
 
         }

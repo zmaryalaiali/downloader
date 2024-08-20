@@ -4,6 +4,7 @@ public class NestedFormatModel {
      private String format;
      private String quality;
      private String url;
+     private String audioUrl;
 
      private boolean isSelect ;
 
@@ -13,6 +14,13 @@ public class NestedFormatModel {
         this.url = url;
     }
 
+    public NestedFormatModel(String format, String quality, String url, String audioUrl, boolean isSelect) {
+        this.format = format;
+        this.quality = quality;
+        this.url = url;
+        this.audioUrl = audioUrl;
+        this.isSelect = isSelect;
+    }
 
     public String getQuality() {
         return quality;
@@ -41,5 +49,9 @@ public class NestedFormatModel {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getAudioUrl() {
+        return audioUrl;
     }
 }

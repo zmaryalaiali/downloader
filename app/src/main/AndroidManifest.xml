@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
-<!--    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>-->
 
     <application
         android:allowBackup="true"
@@ -17,18 +16,18 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-
         android:theme="@style/Theme.Downloader"
-        tools:targetApi="31"
-        >
-<!--        <meta-data-->
-<!--            android:name="com.google.android.gms.ads.APPLICATION_ID"-->
-<!--            android:value="ca-app-pub-xxxxxxxxxxxxxxxx~yyyyyyyyyy"/>-->
-
+        tools:targetApi="31">
+        <activity
+            android:name=".HomeVideoActivity"
+            android:exported="false" />
+        <!-- <meta-data -->
+        <!-- android:name="com.google.android.gms.ads.APPLICATION_ID" -->
+        <!-- android:value="ca-app-pub-xxxxxxxxxxxxxxxx~yyyyyyyyyy"/> -->
         <receiver
             android:name=".MyReceiver"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true" />
 
         <activity android:name=".VideoPlayerActivity" />
         <activity
@@ -54,7 +53,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".DownloadListActivity" />
     </application>
 

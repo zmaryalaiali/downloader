@@ -44,6 +44,7 @@
     <string name="download_speed_bytes">%1$d B/s</string>
     <string name="download_speed_kb">%1$s KB/s</string>
     <string name="download_speed_mb">%1$s MB/s</string>
+    <string name="downloaded">Downloaded</string>
 
     <string name="admob">pub</string>
     <string name="interestitionID">ca-app-pub-3940256099942544/1033173712</string>
